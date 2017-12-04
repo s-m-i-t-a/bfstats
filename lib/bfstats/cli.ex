@@ -103,8 +103,10 @@ defmodule Bfstats.CLI do
   end
 
   defp print_table(data) do
-    data
-    |> TableRex.quick_render!(@header)
-    |> IO.puts()
+    table =
+      data
+      |> TableRex.quick_render!(@header)
+
+    IO.puts("\n#{table}\n")
   end
 end
