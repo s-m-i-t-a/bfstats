@@ -31,12 +31,12 @@ defmodule Bfstats.Compute do
     map
     |> Enum.map(
       fn({project, tasks}) ->
-         {
-           project,
-           tasks
-           |> Enum.reduce(0, fn([_, time, _, _, _], acc) -> acc + time end)
-           |> to_hours()
-         }
+        [
+          project,
+          tasks
+          |> Enum.reduce(0, fn([_, time, _, _, _], acc) -> acc + time end)
+          |> to_hours()
+        ]
       end
     )
   end
@@ -47,6 +47,6 @@ defmodule Bfstats.Compute do
   end
 
   defp to_hours(minutes) do
-    minutes / 60
+    Float.round(minutes / 60, 2)
   end
 end
