@@ -17,7 +17,7 @@ defmodule Bfstats.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     # [extra_applications: [:logger]]
-    [applications: [:logger]]
+    [applications: [:logger, :table_rex]]
   end
 
   # Dependencies can be Hex packages:
@@ -34,6 +34,7 @@ defmodule Bfstats.Mixfile do
       {:csv, "~> 2.0.0"},
       {:timex, "~> 3.1"},
       {:result, "~> 1.1"},
+      {:table_rex, "~> 0.10.0"},
       {:dogma, "~> 0.1", only: :dev},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
     ]
